@@ -1,5 +1,5 @@
-.custom-navbar {
-  background-color: #141D72; /* Azul oscuro */
+/*.custom-navbar {
+  background-color: #141D72;  Azul oscuro 
   height: 60px;
 }
 
@@ -11,4 +11,47 @@
 
 .navbar-brand {
   font-size: 16px;
+}
+
+.header-toolbar { 
+  padding: 0 24px; 
+  height: 64px; 
+  background-color: #141D72;
+}
+.logo { font-weight: 700; font-size: 18px; }
+.spacer { flex: 1 1 auto; }
+nav button { color: white; font-weight: 500; }*/
+
+.header-toolbar {
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+  height: 64px;
+  background-color: #0d1a80;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+  flex: 1; /* ocupa espacio a la izquierda */
+}
+
+.nav-center {
+  flex: 1; /* ocupa espacio central */
+  display: flex;
+  justify-content: center; /* 🔥 centra el menú */
+  gap: 24px; /* espacio entre botones */
+}
+
+.nav-center button {
+  color: white !important;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: none;
+  min-width: auto;
+}
+
+.spacer {
+  flex: 1; /* ocupa espacio a la derecha */
 }

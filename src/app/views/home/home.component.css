@@ -1,0 +1,102 @@
+/* Hero azul que cubre todo el ancho */
+.hero-section {
+  background: #42a5f5; /* azul claro */
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Tarjeta blanca en el centro */
+.hero-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;  /* Fondo blanco */
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 1100px;
+  width: 100%;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* Columna de texto */
+.hero-text {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.hero-text p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* Botones */
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #1a237e;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #0d1b60;
+}
+
+.btn-secondary {
+  background: #2196f3;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: #1976d2;
+}
+
+/* Imagen / slider */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+
+
+.why-choose-us h2 {
+  font-size: 1.5rem;   /* Más pequeño que los 2rem */
+  color: #333;
+  text-align: left;
+}
+
+.why-choose-us p {
+  font-size: 0.95rem;  /* Texto un poco más pequeño */
+  color: #555;
+  max-width: 700px;
+  margin-top: 0.3rem;
+  text-align: left;
+}
+
+
