@@ -18,7 +18,7 @@ export class ServiceService {
         price: 140,
         stock: 10,
         isPromotional: true,
-        image: "assets/slider/img1.png",
+        image: "assets/images/imagen1.png", 
         description: "Asesoría integral para migración, optimización y gobierno en la nube. Incluye evaluación de arquitectura, plan de costos, seguridad y mejores prácticas para AWS, Azure o GCP"
       },
       {
@@ -28,7 +28,7 @@ export class ServiceService {
         stock: 10,
         price: 840,
         isPromotional: true,
-        image: "assets/slider/img1.png",
+        image: "assets/images/imagen2.png",
         description: "Evaluamos de forma integral la infraestructura tecnológica para identificar vulnerabilidades, verificar el cumplimiento de normativas y fortalecer la protección frente a amenazas."
       },
       {
@@ -38,7 +38,7 @@ export class ServiceService {
         stock: 10,
         price: 230,
         isPromotional: true,
-        image: "assets/slider/img1.png",
+        image: "assets/images/imagen3.png",
         description: "Diseñamos y desarrollamos sitios y aplicaciones web a la medida, funcionales, escalables y optimizadas para ofrecer la mejor experiencia al usuario."
       },
       {
@@ -48,7 +48,7 @@ export class ServiceService {
         stock: 10,
         price: 146,
         isPromotional: true,
-        image: "assets/slider/img1.png",
+        image: "assets/images/imagen4.png",
         description: "Creamos aplicaciones móviles innovadoras y personalizadas, con alto rendimiento y diseño intuitivo, disponibles para Android y iOS."
       },
       {
@@ -58,7 +58,7 @@ export class ServiceService {
         stock: 10,
         price: 350,
         isPromotional: true,
-        image: "assets/slider/img1.png",
+        image: "assets/images/imagen5.png",
         description: "Transformamos los datos en información valiosa mediante análisis avanzados que impulsan la toma de decisiones estratégicas."
       },
       {
@@ -68,7 +68,7 @@ export class ServiceService {
         stock: 10,
         price: 220,
         isPromotional: true,
-        image: "assets/slider/img1.png",
+        image: "assets/images/imagen6.png",
         description: "Diseñamos interfaces atractivas e intuitivas, centradas en la experiencia del usuario para garantizar usabilidad, accesibilidad y estética."
       },
       {
@@ -78,7 +78,7 @@ export class ServiceService {
         stock: 10,
         price: 190,
         isPromotional: true,
-        image: "assets/slider/img1.png",
+        image: "assets/images/imagen7.png",
         description: "Optimizamos el ciclo de vida del software integrando desarrollo y operaciones con prácticas DevOps que aceleran entregas, mejoran la calidad y garantizan despliegues seguros."
       },
       {
@@ -88,7 +88,7 @@ export class ServiceService {
         stock: 10,
         price: 540,
         isPromotional: true,
-        image: "assets/slider/img1.png",
+        image: "assets/images/imagen8.png",
         description: "Desarrollamos e implementamos modelos de inteligencia artificial que automatizan procesos, generan predicciones precisas y aportan valor innovador a tu negocio."
       },
       {
@@ -98,7 +98,7 @@ export class ServiceService {
         stock: 10,
         price: 840,
         isPromotional: true,
-        image: "assets/slider/img1.png",
+        image: "assets/images/imagen9.png",
         description: "Brindamos soporte técnico especializado las 24 horas, los 7 días de la semana, asegurando la continuidad y estabilidad de tu infraestructura tecnológica."
       },
       {
@@ -108,7 +108,7 @@ export class ServiceService {
         stock: 10,
         price: 1400,
         isPromotional: true,
-        image: "assets/slider/img1.png",
+        image: "assets/images/imagen10.png",
         description: "Diseñamos e implementamos soluciones basadas en blockchain y contratos inteligentes que garantizan transparencia, seguridad y automatización en tus procesos."
       }
     ]
