@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { v4 as uuidv4 } from 'uuid';
 import Service from '../models/Service';
 
@@ -18,7 +18,7 @@ export class ServiceService {
         price: 140,
         stock: 10,
         isPromotional: true,
-        image: "assets/slider/img1.png",
+        image: "assets/slider/img1.png", // assets/images/servicio1.png
         description: "Asesoría integral para migración, optimización y gobierno en la nube. Incluye evaluación de arquitectura, plan de costos, seguridad y mejores prácticas para AWS, Azure o GCP"
       },
       {
