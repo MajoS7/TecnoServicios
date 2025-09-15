@@ -1,27 +1,3 @@
-/*.custom-navbar {
-  background-color: #141D72;  Azul oscuro 
-  height: 60px;
-}
-
-.navbar-nav .nav-link {
-  margin-left: 15px;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.navbar-brand {
-  font-size: 16px;
-}
-
-.header-toolbar { 
-  padding: 0 24px; 
-  height: 64px; 
-  background-color: #141D72;
-}
-.logo { font-weight: 700; font-size: 18px; }
-.spacer { flex: 1 1 auto; }
-nav button { color: white; font-weight: 500; }*/
-
 .header-toolbar {
   display: flex;
   align-items: center;
@@ -44,7 +20,7 @@ nav button { color: white; font-weight: 500; }*/
   gap: 24px; /* espacio entre botones */
 }
 
-.nav-center button {
+.nav-center a {
   color: white !important;
   font-weight: 500;
   font-size: 16px;

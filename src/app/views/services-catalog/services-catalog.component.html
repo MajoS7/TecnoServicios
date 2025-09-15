@@ -1,3 +1,46 @@
-<p>
-  Service catalog works!
-</p>
+<div class="container my-4">
+  <!-- CABECERA: título + buscador -->
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <!-- TÍTULO -->
+    <h3 class="page-title mb-0">Catálogo de Servicios</h3>
+
+    <!-- BUSCADOR -->
+    <div class="search-wrapper">
+      <div class="input-group">
+        <input 
+          type="search" 
+          class="form-control search-input" 
+          placeholder="Buscar servicios..."
+          [value]="searchTerm"
+          (input)="onSearch($any($event.target).value)"
+          aria-label="Buscar servicios" />
+
+        @if (searchTerm !== '') {
+          <button class="btn btn-outline-secondary" type="button" (click)="clearSearch()">
+            ✕
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- GRID DE SERVICIOS -->
+  <div class="row g-4">
+    @for (service of displayedServices; track service.id) {
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm border-0 rounded-5 overflow-hidden">
+          <img [src]="service.image || 'assets/services/placeholder.jpg'" 
+               class="card-img-top" 
+               alt="{{ service.name }}">
+          <div class="card-body p-3">
+            <h6 class="card-title mb-1">{{ service.name }}</h6>
+          </div>
+          <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center px-3 pb-3">
+            <span class="fw-semibold text-muted small">${{ service.price }}</span>
+            <a href="#" class="text-primary fw-semibold small">Ver detalle</a>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

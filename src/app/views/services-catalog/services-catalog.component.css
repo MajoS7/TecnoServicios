@@ -1,0 +1,46 @@
+/* Título de la página: versión más pequeña y elegante */
+.page-title {
+  font-size: 1.1rem; /* más pequeño que h2/h3 por defecto */
+  font-weight: 600;
+  color: #222;
+}
+
+/* Buscador alineado a la derecha */
+.search-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* Input estilo mockup: pill + sombra ligera */
+.search-input {
+  width: 320px;
+  max-width: 60vw;
+  border-radius: 12px;
+  padding: 10px 14px;
+  box-shadow: 0 2px 8px rgba(13, 26, 128, 0.06);
+  border: 1px solid #e6e6e6;
+}
+
+/* Haz que el botón de limpiar se vea minimal */
+.input-group .btn {
+  border-radius: 0 12px 12px 0;
+  border-left: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Card title más pequeña (tal como pediste antes) */
+.card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Ajustes visuales para que la imagen respete los bordes redondos */
+.card-img-top {
+  height: 140px;
+  object-fit: cover;
+}
+
+/* Footer compactado */
+.card-footer .small {
+  font-size: 0.85rem;
+}
