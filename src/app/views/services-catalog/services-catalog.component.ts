@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../../services/service.service';
 import Service from '../../models/Service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'ts-services-catalog',
   templateUrl: './services-catalog.component.html',
   standalone: true,
+  imports: [RouterLink],
   styleUrls: ['./services-catalog.component.css']
 })
 export class ServicesCatalogComponent implements OnInit {
