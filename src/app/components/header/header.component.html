@@ -1,14 +1,19 @@
 <mat-toolbar class="header-toolbar">
-  <!-- Logo -->
-  <div class="logo">TecnoServicios</div>
+  <div class="logo d-flex align-items-center">
+    <img src="assets/images/logo.png" alt="Logo" class="logo-img me-2" />
+    <span class="fw-bold">TecnoServicios</span>
+  </div>
 
-  <!-- Navegación centrada -->
   <div class="nav-center">
     <a mat-button routerLink="/">Inicio</a>
     <a mat-button routerLink="/services">Servicios</a>
     <a mat-button routerLink="/contact">Contacto</a>
+    <a *ngIf="isLogged" mat-button routerLink="/admin">Admin</a>
   </div>
 
-  <!-- Espacio vacío a la derecha -->
-  <div class="spacer"></div>
+  <span class="spacer"></span>
+
+  <button class="text-light" *ngIf="isLogged" mat-button (click)="logout()">
+    Cerrar sesión
+  </button>
 </mat-toolbar>

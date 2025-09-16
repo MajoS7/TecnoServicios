@@ -1,21 +1,37 @@
-import { Component, OnInit } from '@angular/core';
-import { HeaderComponent } from "../../components/header/header.component";
-import { FooterComponent } from "../../components/footer/footer.component";
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { UserService } from '../../services/user.service';
+import User from '../../models/User';
 
 @Component({
   selector: 'ts-login',
   templateUrl: './login.component.html',
   standalone: true,
   styleUrls: ['./login.component.css'],
-  imports: []
+  imports: [FormsModule, CommonModule],
 })
-export class LoginComponent implements OnInit {
-  
+export class LoginComponent {
+  user: User = {
+    username: '',
+    password: '',
+    name: '',
+    email: '',
+    isEnable: true,
+  };
 
-  constructor(private users: UserService) { }
+  errorMessage: string = '';
 
-  ngOnInit() {
+  constructor(private users: UserService, private router: Router) {}
+
+  login() {
+    const isValid = this.users.validateUser(this.user);
+
+    if (isValid) {
+      this.router.navigate(['/admin']);
+    } else {
+      this.errorMessage = 'Usuario o contraseña incorrectos';
+    }
   }
-
 }
