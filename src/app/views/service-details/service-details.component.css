@@ -1,16 +1,14 @@
 .image-wrapper {
-  width: 100%;
-  max-height: 350px;       /* altura máxima opcional */
-  overflow: hidden;
+  height: 280px;               /* ajusta según tu diseño */
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f8f9fa;     /* fondo gris claro */
+  background-color: #f8f9fa;   /* color neutro para el fondo */
+  overflow: hidden;
 }
 
 .image-wrapper img {
-  width: 100%;
-  height: auto;            /* mantiene proporción */
-  object-fit: contain;     /* ajusta sin cortar */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;  /* muestra toda la imagen sin cortes */
 }
-

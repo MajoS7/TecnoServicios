@@ -44,3 +44,10 @@
 .card-footer .small {
   font-size: 0.85rem;
 }
+
+.card-img-top.fixed-img {
+  height: 180px;       /* Ajusta la altura a lo que necesites */
+  object-fit: contain; /* Mantiene la proporción y no corta */
+  background-color: #f8f9fa; /* Fondo gris clarito */
+  padding: 10px;       /* Opcional: un poco de respiro alrededor */
+}
