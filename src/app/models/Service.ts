@@ -1,10 +1,11 @@
 export default interface Service {
-    id: string,
+    id?: string,
     name: string,
-    code: string,
+    code?: string,
     price: number,
     stock: number,
-    isPromotional: boolean,
-    image: string,
-    description: string
+    isPromotional?: boolean,
+    description: string,
+    image?: string,
+    imageFile?: File | null
 }
