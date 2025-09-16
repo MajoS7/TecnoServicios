@@ -3,7 +3,7 @@ export default interface Service {
     name: string,
     code: string,
     price: number,
-    stock: number,
+    stock?: number,
     isPromotional: boolean,
     image: string,
     description: string

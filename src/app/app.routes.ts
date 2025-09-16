@@ -11,6 +11,6 @@ export const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'service/:id', component: ServiceDetailsComponent },
-  { path: 'servicesCatalog', component: ServicesCatalogComponent }
+  { path: 'services', component: ServicesCatalogComponent },
+  { path: 'services/:id', component: ServiceDetailsComponent }
 ];
