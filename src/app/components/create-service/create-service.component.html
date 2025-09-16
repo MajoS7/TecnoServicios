@@ -1,0 +1,79 @@
+@if (open) {
+  <div class="modal-backdrop fade show"></div>
+}
+
+@if (open) {
+  <div class="modal-host" (click)="close.emit()">
+    <div
+      class="modal-card shadow-lg"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="serviceModalTitle"
+      (click)="$event.stopPropagation()"
+    >
+      <div class="modal-header border-0">
+        <h5 id="serviceModalTitle" class="modal-title">{{isCreate ? 'Crear' : 'Editar'}} servicio</h5>
+      </div>
+
+      <div class="modal-body">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
+              <label class="form-label">Nombre del servicio</label>
+              <input class="form-control" formControlName="name" placeholder="Ej: Implementación Kubernetes">
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="form-label">Precio (por hora)</label>
+              <input type="number" class="form-control" formControlName="price" placeholder="$100">
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="form-label">Cantidad disponible</label>
+              <input type="number" class="form-control" formControlName="quantity" placeholder="10">
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label class="form-label">Estado</label>
+              <select class="form-select" formControlName="status">
+                <option>Activo</option>
+                <option>Inactivo</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Descripción</label>
+              <textarea class="form-control" rows="3" formControlName="description" placeholder="Breve resumen del servicio..."></textarea>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Imagen principal</label>
+              <div
+                class="upload-zone"
+                (click)="triggerFile(fileInput)"
+                (drop)="onDrop($event)"
+                (dragover)="onDragOver($event)"
+              >
+                @if (!imagePreview) {
+                  <div class="text-center">
+                    <i class="bi bi-image upload-icon mb-2"></i>
+                    <div>Sube una imagen o arrástrala aquí</div>
+                  </div>
+                } @else {
+                  <img [src]="imagePreview" alt="preview">
+                }
+                <input #fileInput type="file" accept="image/*" class="d-none" (change)="onFileChange($event)">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer border-0">
+            <button type="button" class="btn backgroud-blue-light" (click)="close.emit()">Cancelar</button>
+            <button type="submit" class="btn backgroud-blue-dark">Guardar</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+}

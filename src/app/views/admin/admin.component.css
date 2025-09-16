@@ -1,0 +1,59 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+.service-thumb { width: 56px; height: 40px; object-fit: cover; }
+
+.card { border-radius: 0.75rem; overflow: hidden; }
+.table { border-radius: 0.75rem; overflow: hidden; }
+
+.table thead th:first-child { border-top-left-radius: 0.75rem; }
+.table thead th:last-child  { border-top-right-radius: 0.75rem; }
+
+.create { background-color: #0d1a80; min-width: 160px !important; }
+
+.backgroud-blue-light { background-color: #42a5f5; color: white; }
+.input-group-text { border-right: none; }
+.input-group .form-control { border-left: none; }
+
+.btn { min-width: 90px; }
+.form-control:focus { box-shadow: none; border-color: #ced4da; }
+
+
+.name-cell { max-width: 260px; }
+@media (max-width: 575.98px) {
+  .name-cell { max-width: 140px; }
+}
+
+
+.admin-toolbar { row-gap: .75rem; }
+@media (max-width: 575.98px) {
+  .admin-toolbar { flex-direction: column; align-items: stretch; }
+  .create { width: 100%; min-width: unset !important; }
+  .search{ width: 100%; min-width: unset !important;}
+}
+
+
+@media (max-width: 575.98px) {
+  .table td, .table th { padding: .5rem .6rem; font-size: .875rem; }
+}
+
+
+.action-btn .btn-text { display: none; }
+@media (min-width: 576px) {
+  .action-btn .btn-text { display: inline; }
+}
+
+
+.pager-wrap { gap: .75rem; }
+@media (max-width: 575.98px) {
+  .pager-wrap { flex-direction: column; align-items: stretch; text-align: center; }
+  .pager-wrap > .d-flex { justify-content: center; }
+}
+
+/* Botones del paginador más cómodos en pantallas táctiles */
+@media (max-width: 575.98px) {
+  .pager-wrap .btn { padding-left: 1rem; padding-right: 1rem; }
+}
+
+.search{
+  width: 86%;
+}
