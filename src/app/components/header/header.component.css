@@ -31,3 +31,8 @@
 .spacer {
   flex: 1; /* ocupa espacio a la derecha */
 }
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
