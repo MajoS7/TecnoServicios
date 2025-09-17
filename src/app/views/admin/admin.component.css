@@ -8,7 +8,7 @@
 .table thead th:first-child { border-top-left-radius: 0.75rem; }
 .table thead th:last-child  { border-top-right-radius: 0.75rem; }
 
-.create { background-color: #0d1a80; min-width: 160px !important; }
+.create { background-color: #0d1a80; }
 
 .backgroud-blue-light { background-color: #42a5f5; color: white; }
 .input-group-text { border-right: none; }
@@ -23,12 +23,30 @@
   .name-cell { max-width: 140px; }
 }
 
+.admin-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: .75rem;
+}
 
-.admin-toolbar { row-gap: .75rem; }
+
+.admin-toolbar .search {
+  flex: 1 1 0;   
+  min-width: 0;  
+  width: auto;   
+}
+
+
+.admin-toolbar .create {
+  flex: 0 1 auto;       
+  min-width: 160px;      
+  white-space: nowrap;   
+}
+
 @media (max-width: 575.98px) {
   .admin-toolbar { flex-direction: column; align-items: stretch; }
-  .create { width: 100%; min-width: unset !important; }
-  .search{ width: 100%; min-width: unset !important;}
+  .admin-toolbar .search { width: 100%; }
+  .admin-toolbar .create { width: 100%; min-width: unset; } 
 }
 
 

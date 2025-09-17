@@ -4,13 +4,7 @@
 
 @if (open) {
   <div class="modal-host" (click)="close.emit()">
-    <div
-      class="modal-card shadow-lg"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="serviceModalTitle"
-      (click)="$event.stopPropagation()"
-    >
+    <div class="modal-card shadow-lg" role="dialog" aria-modal="true" aria-labelledby="serviceModalTitle" (click)="$event.stopPropagation()">
       <div class="modal-header border-0">
         <h5 id="serviceModalTitle" class="modal-title">{{isCreate ? 'Crear' : 'Editar'}} servicio</h5>
       </div>
@@ -18,42 +12,80 @@
       <div class="modal-body">
         <form [formGroup]="form" (ngSubmit)="submit()">
           <div class="row g-3">
+
+            <!-- Nombre -->
             <div class="col-12 col-md-6">
               <label class="form-label">Nombre del servicio</label>
-              <input class="form-control" formControlName="name" placeholder="Ej: Implementación Kubernetes">
+              <input class="form-control"
+                     formControlName="name"
+                     placeholder="Ej: Implementación Kubernetes"
+                     [class.is-invalid]="invalid('name')">
+              @if (invalid('name')) {
+                <div class="invalid-feedback">El nombre es obligatorio (mín. 3 caracteres).</div>
+              }
             </div>
 
+            <!-- Precio -->
             <div class="col-12 col-md-6">
               <label class="form-label">Precio (por hora)</label>
-              <input type="number" class="form-control" formControlName="price" placeholder="$100">
+              <input type="text"
+                    class="form-control"
+                    formControlName="price"
+                    integerOnly
+                    placeholder="$100"
+                    [class.is-invalid]="invalid('price')">
+
+              @if (invalid('price')) {
+                <div class="invalid-feedback">
+                  El precio debe ser un número entero mayor o igual a 0.
+                </div>
+              }
             </div>
 
+            <!-- Cantidad -->
             <div class="col-12 col-md-6">
               <label class="form-label">Cantidad disponible</label>
-              <input type="number" class="form-control" formControlName="quantity" placeholder="10">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="quantity"
+                integerOnly
+                placeholder="10"
+                (input)="onQuantityInput($event)"
+                [class.is-invalid]="invalid('quantity')"
+              />
+              @if (invalid('quantity')) {
+                <div class="invalid-feedback">Cantidad entre 1 y 100.</div>
+              }
             </div>
 
+            <!-- Estado -->
             <div class="col-12 col-md-6">
               <label class="form-label">Estado</label>
-              <select class="form-select" formControlName="status">
+              <select class="form-select"
+                      formControlName="status"
+                      [class.is-invalid]="invalid('status')">
+                <option value="" disabled>Selecciona estado</option>
                 <option>Activo</option>
                 <option>Inactivo</option>
               </select>
+              @if (invalid('status')) {
+                <div class="invalid-feedback">El estado es obligatorio.</div>
+              }
             </div>
 
             <div class="col-12">
               <label class="form-label">Descripción</label>
-              <textarea class="form-control" rows="3" formControlName="description" placeholder="Breve resumen del servicio..."></textarea>
+              <textarea class="form-control desc-fixed"
+                        rows="3"
+                        formControlName="description"
+                        placeholder="Breve resumen del servicio..."></textarea>
             </div>
+
 
             <div class="col-12">
               <label class="form-label">Imagen principal</label>
-              <div
-                class="upload-zone"
-                (click)="triggerFile(fileInput)"
-                (drop)="onDrop($event)"
-                (dragover)="onDragOver($event)"
-              >
+              <div class="upload-zone" (click)="triggerFile(fileInput)" (drop)="onDrop($event)" (dragover)="onDragOver($event)">
                 @if (!imagePreview) {
                   <div class="text-center">
                     <i class="bi bi-image upload-icon mb-2"></i>
@@ -65,10 +97,11 @@
                 <input #fileInput type="file" accept="image/*" class="d-none" (change)="onFileChange($event)">
               </div>
             </div>
+
           </div>
 
           <div class="modal-footer border-0">
-            <button type="button" class="btn backgroud-blue-light" (click)="close.emit()">Cancelar</button>
+            <button type="button" class="btn backgroud-blue-light" (click)="cancel()">Cancelar</button>
             <button type="submit" class="btn backgroud-blue-dark">Guardar</button>
           </div>
         </form>
