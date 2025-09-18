@@ -66,8 +66,8 @@
                       formControlName="status"
                       [class.is-invalid]="invalid('status')">
                 <option value="" disabled>Selecciona estado</option>
-                <option>Activo</option>
-                <option>Inactivo</option>
+                <option value="{{true}}">Activo</option>
+                <option value="{{false}}">Inactivo</option>
               </select>
               @if (invalid('status')) {
                 <div class="invalid-feedback">El estado es obligatorio.</div>

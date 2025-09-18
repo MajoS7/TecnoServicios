@@ -7,5 +7,6 @@ export default interface Service {
     isPromotional?: boolean,
     description: string,
     image?: string,
-    imageFile?: File | null
+    imageFile?: File | null,
+    status:boolean
 }

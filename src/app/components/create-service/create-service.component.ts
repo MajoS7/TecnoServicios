@@ -113,6 +113,7 @@ export class CreateServiceComponent implements OnInit, OnChanges {
       description: v.description ?? '',
       image: this.selectService?.image,   
       imageFile: v.imageFile ?? null,
+      status:v.status
     };
 
     this.form.reset();
