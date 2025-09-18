@@ -1,23 +1,29 @@
 <div class="container py-4">
-  <h2>Panel de administración</h2>
-
-  <div class="admin-toolbar d-flex gap-3 align-items-center mb-3 flex-wrap">
-    <div class="input-group search">
-      <span class="input-group-text bg-white">
-        <i class="bi bi-search"></i>
-      </span>
-      <input
-        class="form-control"
-        placeholder="Buscar servicios..."
-        (input)="onSearch($event)"
-      />
-    </div>
-
-    <button class="btn btn-primary create" (click)="openModal(true)">
-      + Crear servicio
-    </button>
+  <!-- Título + botón -->
+  <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+    <h2 class="mb-0">Panel de administración</h2>
+    <button class="btn btn-primary create" (click)="openModal(true)">+ Crear servicio</button>
   </div>
 
+<div class="admin-toolbar d-flex gap-3 align-items-center mb-3">
+
+  <div class="input-group search flex-grow-1">
+    <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+    <input class="form-control" placeholder="Buscar servicios..." (input)="onSearch($event)" />
+  </div>
+
+  <div class="input-group status-filter-group w-auto">
+    <span class="input-group-text">Estado:</span>
+    <select class="form-select status-filter" [(ngModel)]="statusFilter">
+      <option [ngValue]="null">Todos</option>
+      <option [ngValue]="true">Activo</option>
+      <option [ngValue]="false">Inactivo</option>
+    </select>
+  </div>
+</div>
+
+
+  <!-- Tabla -->
   <div class="card shadow-sm">
     <div class="table-responsive">
       <table class="table table-hover align-middle mb-0">
@@ -26,17 +32,28 @@
             <th scope="col" class="small backgroud-blue-light">Imagen</th>
             <th scope="col" class="small backgroud-blue-light">Nombre</th>
             <th scope="col" class="small backgroud-blue-light">Precio</th>
+            <th scope="col" class="small backgroud-blue-light text-center">Estado</th>
             <th scope="col" class="small text-end backgroud-blue-light">Acciones</th>
           </tr>
         </thead>
         <tbody>
           @for (row of paginated; track row.id) {
             <tr>
-              <td>
-                <img [src]="row.image" alt="" class="img-thumbnail service-thumb" />
-              </td>
+              <td><img [src]="row.image" alt="" class="img-thumbnail service-thumb" /></td>
               <td class="text-truncate name-cell">{{ row.name }}</td>
-              <td>{{ row.price | currency : "USD" }}</td>
+              <td>{{ row.price | currency:'USD' }}</td>
+
+              <!-- Estado -->
+              <td class="text-center">
+                <span
+                  class="badge rounded-pill px-3 py-2"
+                  [ngClass]="row.status
+                    ? 'bg-success text-white'
+                    : 'bg-secondary text-white'">
+                  {{ row.status ? 'Activo' : 'Inactivo' }}
+                </span>
+              </td>
+
               <td class="text-end text-nowrap">
                 <button class="btn btn-sm me-2 rounded-pill backgroud-blue-light action-btn" (click)="openModal(false, row)">
                   <i class="bi bi-pencil me-1"></i><span class="btn-text">Editar</span>
@@ -50,7 +67,7 @@
 
           @if (paginated.length === 0) {
             <tr>
-              <td colspan="4" class="text-center py-4 text-muted">Sin resultados</td>
+              <td colspan="5" class="text-center py-4 text-muted">Sin resultados</td>
             </tr>
           }
         </tbody>
@@ -58,25 +75,12 @@
     </div>
   </div>
 
+  <!-- Paginador -->
   <div class="pager-wrap d-flex justify-content-between align-items-center px-3 py-2 bg-white">
-    <small class="text-muted">
-      Mostrando {{ rangeStart }}–{{ rangeEnd }} de {{ total }}
-    </small>
-
+    <small class="text-muted">Mostrando {{ rangeStart }}–{{ rangeEnd }} de {{ total }}</small>
     <div class="d-flex gap-2">
-      <button
-        class="btn backgroud-blue-light btn-sm rounded-pill px-3"
-        (click)="prev()"
-        [disabled]="page === 1 || total === 0">
-        Anterior
-      </button>
-
-      <button
-        class="btn backgroud-blue-light btn-sm rounded-pill px-3"
-        (click)="next()"
-        [disabled]="page === totalPages || total === 0">
-        Siguiente
-      </button>
+      <button class="btn backgroud-blue-light btn-sm rounded-pill px-3" (click)="prev()" [disabled]="page === 1 || total === 0">Anterior</button>
+      <button class="btn backgroud-blue-light btn-sm rounded-pill px-3" (click)="next()" [disabled]="page === totalPages || total === 0">Siguiente</button>
     </div>
   </div>
 </div>

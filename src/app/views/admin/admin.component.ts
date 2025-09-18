@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CurrencyPipe } from '@angular/common';
+import { CurrencyPipe, NgClass } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import Service from '../../models/Service';
 import { ServiceService } from '../../services/service.service';
@@ -8,7 +8,7 @@ import { CreateServiceComponent } from '../../components/create-service/create-s
 @Component({
   selector: 'ts-admin',
   standalone: true,
-  imports: [FormsModule, CreateServiceComponent, CurrencyPipe],
+  imports: [FormsModule, CreateServiceComponent, CurrencyPipe, NgClass],
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
 })
@@ -20,6 +20,7 @@ export class AdminComponent {
   showCreate = false;
   isCreate = true;
   selectService?: Service;
+  statusFilter:boolean | null=null;
 
   constructor(private serviceService: ServiceService) {
     this.data = this.serviceService.getAll();
@@ -27,7 +28,9 @@ export class AdminComponent {
 
   get filtered(): Service[] {
     const f = this.search.trim().toLowerCase();
-    return f ? this.data.filter(d => JSON.stringify(d).toLowerCase().includes(f)) : this.data.slice();
+    return this.data
+      .filter(d =>this.statusFilter === null ? true : (d.status ?? true) === this.statusFilter)
+      .filter(d => f ? JSON.stringify(d).toLowerCase().includes(f) : true);
   }
 
   get totalPages(): number { return Math.max(1, Math.ceil(this.filtered.length / this.pageSize)); }
@@ -59,7 +62,8 @@ export class AdminComponent {
       stock: service.stock,
       description: service.description,
       image: service.image,
-      imageFile: service.imageFile ?? null
+      imageFile: service.imageFile ?? null,
+      status: service.status
     }
     if (this.isCreate) {
       this.serviceService.save(dataService);

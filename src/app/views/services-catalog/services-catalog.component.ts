@@ -18,7 +18,7 @@ export class ServicesCatalogComponent implements OnInit {
   constructor(private serviceService: ServiceService) { }
 
   ngOnInit() {
-    this.services = this.serviceService.getAll();
+    this.services = this.serviceService.getAll().filter(s => s.status===true);
     this.displayedServices = [...this.services];
   }
 
