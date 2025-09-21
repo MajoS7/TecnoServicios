@@ -1,3 +1,52 @@
-<p>
-  contact works!
+<div class="contact-container">
+  <!-- Frase en la esquina superior derecha -->
+  <div class="support-label">Soporte 24/7</div>
+
+ <h2 class="titulo-contacto">Contáctanos</h2>
+  <p class="subtitle">
+  <span class="consulta">¿Tienes una consulta?</span><br />
+  Completa el formulario y nuestro equipo lo responderá a la brevedad.
 </p>
+
+
+  <div class="contact-content">
+    <!-- Columna izquierda: Formulario -->
+    <form class="contact-form">
+      <label for="name">Nombre</label>
+      <input id="name" type="text" name="name" placeholder="Ingresa tu nombre" required />
+
+      <label for="email">Email</label>
+      <input id="email" type="email" name="email" placeholder="ejemplo&#64;correo.com" required />
+
+      <label for="phone">Teléfono</label>
+      <input id="phone" type="tel" name="phone" placeholder="+57 300 000 0000" />
+
+      <label for="subject">Asunto</label>
+      <input id="subject" type="text" name="subject" placeholder="Motivo de tu consulta" required />
+
+      <label for="message">Mensaje</label>
+      <textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+
+      <p class="note">Tiempo de respuesta estimado: 1-2 horas hábiles.</p>
+
+      <div class="actions">
+        <button type="reset" class="btn btn-secondary">Limpiar</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </div>
+    </form>
+
+    <!-- Columna derecha: Info de contacto -->
+    <div class="contact-info">
+      <p><strong>Correo:</strong> soporte&#64;tecnoservicios.com</p>
+      <p><strong>Teléfono:</strong> +34 910 000 000</p>
+      <p><strong>Horario:</strong> Lun-Vie, 9:00–18:00</p>
+
+      
+
+      <!-- Imagen inferior derecha -->
+      <div class="contact-image">
+        <img src="assets/images/mapa.png" alt="Imagen de contacto" />
+      </div>
+    </div>
+  </div>
+</div>

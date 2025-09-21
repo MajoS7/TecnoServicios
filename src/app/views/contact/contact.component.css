@@ -1,0 +1,175 @@
+.contact-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+  position: relative;
+}
+
+h2 {
+  color: #1a2a5a;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  margin-left: -20px; /* prueba con -10px, -20px, -40px, etc. */
+}
+
+
+.subtitle {
+  color: #555;
+  margin-bottom: 2rem;
+  font-size: 1rem; /* texto normal */
+}
+
+.consulta {
+  font-weight: bold;    /* solo esta parte en negrilla */
+  font-size: 1.4rem;    /* más grande */
+  color: #1a2a5a;       /* azul para resaltar (puedes cambiarlo) */
+}
+
+
+
+.contact-content {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap; /* se acomoda en móviles */
+}
+
+.contact-form,
+.contact-info {
+  flex: 1;
+  min-width: 320px;
+}
+
+/* Estilos formulario */
+label {
+  display: block;
+  margin: 0.5rem 0 0.2rem;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.note {
+  font-size: 0.85rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #1a2a5a;
+  color: white;
+}
+
+.btn-secondary {
+  background: #ddd;
+  color: #333;
+}
+
+/* Estilos info contacto */
+.contact-info p {
+  margin: 0.5rem 0;
+}
+
+.map {
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Imagen inferior derecha */
+.contact-image {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact-image img {
+  position: relative;   /* ahora se mueve con el contenido */
+  margin-top: 2cm;      /* desplaza hacia abajo */
+  margin-left: 10cm;     /* 5 cm hacia la derecha dentro del flujo normal */
+  width: 600px;         /* 4 veces más grande */
+  height: auto;
+  left: 3cm;
+}
+
+
+
+/*soporte 24/7 */
+
+.support-label {
+  position: absolute;
+  top: 1rem;
+  right: 0;        /* pegado al borde derecho */
+  color: #000;     /* letra negra */
+  background: none; /* sin rectángulo */
+  padding: 0;      /* quitamos el espacio extra */
+  border-radius: 0; /* eliminamos las esquinas redondeadas */
+  font-size: 0.9rem;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.contact-info p {
+  position: relative;
+  margin: 0.5rem 0;
+  padding-left: 1.5rem; /* deja espacio para el cuadrito */
+}
+
+.contact-info p {
+  position: relative;
+  margin: 1rem 0;       /* más espacio entre cada línea */
+  padding-left: 2rem;   /* más espacio para el cuadrito */
+}
+
+.contact-info p {
+  position: relative;
+  margin: 1.2rem 0;     /* más espacio entre cada línea */
+  padding-left: 2.5rem; /* deja espacio suficiente para cuadros grandes */
+}
+
+.contact-info p::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2rem;          /* ajusta para centrar el cuadro */
+  width: 20px;          /* cuadro más grande */
+  height: 20px;         /* cuadro más grande */
+  background: #3a7bd5;  /* azul más claro */
+  border-radius: 4px;   /* esquinas redondeadas suaves */
+}
+
+
+.titulo-contacto {
+  color: #1a2a5a;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  margin-left: -30px; /* ajusta: -20px, -40px, etc */
+  position: relative;
+  left: -10px; /* extra ajuste fino */
+}
+
+
+
+
+.contact-container {
+  padding-left: 0; /* elimina espacio interno a la izquierda */
+}
