@@ -101,7 +101,6 @@ export class CreateServiceComponent implements OnInit, OnChanges {
 
   submit() {
     if (this.form.invalid) { this.form.markAllAsTouched(); return; }
-    console.log(this.form.value)
     const v = this.form.value;
     const service: Service = {
       id: this.isCreate ? undefined : this.selectService?.id,
